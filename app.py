@@ -19,7 +19,7 @@ st.markdown(
 )
 
 st.title("📀 Datasweeper Sterling Integrator By Zahra Naveed")
-st.weite("Transform your files between CSV and Excel formats with built-in data cleaning and visulization Creating the project for quarter 3!")
+st.write("Transform your files between CSV and Excel formats with built-in data cleaning and visulization Creating the project for quarter 3!")
 
 uploaded_files = st.file_uploader("Upload your files (accepts CSV or Excel):", type=["cvs","xls"], accept_multiple_files=(True))
 
