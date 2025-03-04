@@ -6,18 +6,6 @@ from io import BytesIO
 
 st.set_page_config(page_title= "Data Sweeper",layout="wide")
 
-st.markdown(
-    """
-    <style>
-    .stApp{
-    background-color: black;
-    color: #FFFFFF;
-    font-weight: bold;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 st.title("📀 Datasweeper Sterling Integrator By Zahra Naveed")
 st.write("Transform your files between CSV and Excel formats with built-in data cleaning and visulization Creating the project for quarter 3!")
@@ -30,7 +18,7 @@ if uploaded_files:
 
         if file_ext == ".csv":
             df = pd.read_csv(file)
-        elif file_ext == "xlsx":
+        elif file_ext == ".xlsx":
             df = pd.read_excel(file)
         else:
             st.error(f"unsupported file type: {file_ext}")
@@ -40,7 +28,7 @@ if uploaded_files:
 
         #data cleaning options
         st.subheader("🛠 Data Cleaning options")
-        if st.checbox(f"Clean data for {file.name}"):
+        if st.checkbox(f"Clean data for {file.name}"):
             col1, col2 = st.columns(2)
 
             with col1:
@@ -70,7 +58,7 @@ if uploaded_files:
         if st.button(f"Convert{file.name}"):
             buffer = BytesIO()
             if conversion_type == "CVS":
-                df.to.to_csv(buffer, index=False)
+                df.to_csv(buffer, index=False)
                 file_name = file.name.replace(file_ext, ".csv")
                 mime_type ="text/csv"
 
